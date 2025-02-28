@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 
@@ -51,6 +51,21 @@ const Home = () => {
       ease: "power3.out",
     });
   };
+  useEffect(() => {
+    const ellipse = ellipseRef.current.querySelector("ellipse");
+    
+    const length = ellipse.getTotalLength();
+    gsap.set(ellipse, {
+      strokeDasharray: length,
+      strokeDashoffset: length, 
+    });
+    
+    gsap.to(ellipse, {
+      strokeDashoffset: 0,
+      duration: 4,
+      ease: "power1.out",
+    });
+  }, []);
 
   const handleMouseLeave = () => {
     gsap.to(h1Ref.current, {
@@ -93,7 +108,15 @@ const Home = () => {
       >
         <h1
           ref={h1Ref}
-          style={{ margin: 0, padding: 0, position: "relative", zIndex: 0 }}
+          style={{
+            margin: 0,
+            padding: 0,
+            position: "relative",
+            zIndex: 0,
+            translate: "none",
+            rotate: "none",
+            scale: "none",
+          }}
         >
           Plexcord
         </h1>
@@ -106,7 +129,13 @@ const Home = () => {
             position: "absolute",
             top: "-20%",
             left: 0,
-            transform: "rotateX(70deg)",
+            right: 0,
+            margin: "0 auto",
+            transform: "perspective(800px) rotateX(75deg)",
+            translate: "none",
+            rotate: "none",
+            scale: "none",
+            maxWidth:"60vw"
           }}
         >
           <ellipse
@@ -115,7 +144,7 @@ const Home = () => {
             rx="50%"
             ry="50%"
             fill="none"
-            stroke="#4b0d8c"
+            stroke="var(--primary-color)"
             strokeWidth="10"
           />
         </svg>
@@ -129,13 +158,17 @@ const Home = () => {
             textAlign: "center",
             color: "#fff",
             filter: "drop-shadow(0 0 10px #ffffff)",
+            translate: "none",
+            WebkitTextStrokeWidth: "thin",
+            rotate: "none",
+            scale: "none",
           }}
         >
           Taking Discord to the Next Level!
         </p>
         <div className="hero-buttons">
           <div className="button" onClick={() => navigate("/download")}>
-            <img src="/icons/download.svg" />
+            <img src="/icons/download.svg" alt="download" />
             <span>Download</span>
           </div>
           <a
@@ -143,15 +176,15 @@ const Home = () => {
             className="button"
             target="_blank"
           >
-            <img src="/icons/community.svg" />
-            <span>Join Discord</span>
+            <img src="/icons/community.svg" alt="community" />
+            <span>Join Community</span>
           </a>
           <a
             href="https://github.com/MutanPlex/Plexcord"
             className="button"
             target="_blank"
           >
-            <img src="/icons/github.svg" />
+            <img src="/icons/github.svg" alt="github" />
             <span>View Github</span>
           </a>
         </div>

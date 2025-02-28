@@ -75,11 +75,22 @@
   font-family: "Playwrite IT Moderna", cursive;
   font-weight: 600;
   font-size: 18px;
+
+  --primary-color: #6e1beb;
+  --secondary-color: #eb1b1b;
+  
+  --primary-hover: #777df7;
+  --secondary-hover: #f86c6c;
 }
 
 * {
   margin: 0;
   padding: 0;
+  cursor: none;
+}
+html{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -108,15 +119,16 @@ header ul li {
 }
 
 .href {
-  color: #6e1beb;
+  color: var(--primary-color);
   text-decoration: inherit;
   position: relative;
   display: inline-block;
-  cursor: pointer;
+  filter: drop-shadow(2px 4px 6px black);
+  -webkit-text-stroke-width: thin;
 }
 
 .href:hover {
-  color: rgb(119, 125, 247);
+  color: var(--primary-hover);
 }
 
 .href::before {
@@ -127,7 +139,7 @@ header ul li {
   margin: 0 auto;
   height: 2px;
   position: absolute;
-  background-color: #646cff;
+  background-color: var(--primary-color);
   display: inline-block;
   transition: width 0.25s;
   bottom: 0;
@@ -137,7 +149,7 @@ header ul li {
   content: " ";
   width: 100%;
   height: 2px;
-  background-color: #535bf2;
+  background-color: var(--primary-hover);
 }
 
 button {
@@ -148,7 +160,6 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
-  cursor: pointer;
   transition: border-color 0.25s;
 }
 
@@ -165,14 +176,15 @@ button:focus-visible {
   src: url("./assets/fonts/bueno.woff2") format("woff2 supports variations"), url("./assets/fonts/bueno-vf.woff2") format("woff2-variations");
   font-weight: 700;
   font-family: Bueno-VF;
-  font-synthesis: none
+  font-synthesis: none;
+  font-display: swap;
 }
 .logo {
   will-change: filter;
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #6e1beb);
+  filter: drop-shadow(0 0 2em var(--primary-color));
 }
 .hero-container {
   width: 100%;
@@ -190,7 +202,28 @@ button:focus-visible {
   background-color: #eb3f3f;
   color: white;
 }
-
+.Cursor {
+  pointer-events: none;
+  position: fixed;
+  display: block;
+  border-radius: 0;
+  transform-origin: center center;
+  mix-blend-mode: difference;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  filter: url("#goo");
+}
+.Cursor span {
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 20px;
+    background-color: white;
+    transform-origin: center center;
+    transform: translate(-50%, -50%);
+  }
 .hero-container .hero h1 {
   font-size: 10em;
   font-weight: 600;
@@ -203,10 +236,10 @@ button:focus-visible {
   text-align: center;
   color: #fff;
   text-shadow:
-    -2px -2px 0 #eb1b1b,
-    2px -2px 0 #6e1beb,
-    -2px 2px 0 #6e1beb,
-    2px 2px 0 #6e1beb;
+    -2px -2px 0 var(--secondary-color),
+    2px -2px 0 var(--primary-color),
+    -2px 2px 0 var(--primary-color),
+    2px 2px 0 var(--primary-color);
   animation: light 2s infinite linear;
   user-select: none;
 }
@@ -220,6 +253,7 @@ button:focus-visible {
 .hero-buttons .button {
   display: flex;
   align-items: center;
+  
 }
 
 .hero-buttons .button img {
@@ -232,32 +266,31 @@ button:focus-visible {
 .button {
   display: inline-block;
   padding: 5px 10px;
-  background-color: #6e1beb;
+  background-color: var(--primary-color);
   margin: 10px;
   color: #fff;
   text-decoration: none;
   transition: .3s;
-  cursor: pointer;
   border-radius: 2px;
   user-select: none;
 }
 
 .button:hover {
   background-color: #4b0d8c;
-  box-shadow: 0 0 10px #6e1beb;
+  box-shadow: 0 0 10px var(--primary-color);
 }
 
 @keyframes light {
   0% {
-    filter: drop-shadow(0 0 10px #6e1beb);
+    filter: drop-shadow(0 0 10px var(--primary-color));
   }
 
   50% {
-    filter: drop-shadow(0 0 16px #6e1beb);
+    filter: drop-shadow(0 0 16px var(--primary-color));
   }
 
   100% {
-    filter: drop-shadow(0 0 10px #6e1beb);
+    filter: drop-shadow(0 0 10px var(--primary-color));
   }
 }
 
