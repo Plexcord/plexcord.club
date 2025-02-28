@@ -10,7 +10,7 @@ const Cursor = () => {
   const lastFrame = useRef(0);
   const timeoutID = useRef(null);
   const idle = useRef(false);
-  const mousePosition = useRef({ x: 0, y: 0 });
+  const mousePosition = useRef({ x: -50, y: -50 });
   const dots = useRef([]);
 
   class Dot {
