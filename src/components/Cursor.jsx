@@ -6,7 +6,7 @@ const Cursor = () => {
   const amount = 40; 
   const sineDots = Math.floor(amount * 0.3);
   const width = 26;
-  const idleTimeout = 500;
+  const idleTimeout = 250;
   const lastFrame = useRef(0);
   const timeoutID = useRef(null);
   const idle = useRef(false);
@@ -20,7 +20,7 @@ const Cursor = () => {
       this.x = 0;
       this.y = 0;
       this.scale = 1 - 0.02 * index;
-      this.range = 8 * this.scale; 
+      this.range = 9 * this.scale; 
       this.angleX = Math.PI * 2 * Math.random();
       this.angleY = Math.PI * 2 * Math.random();
       this.element = document.createElement("span");
@@ -34,20 +34,20 @@ const Cursor = () => {
       gsap.to(this.element, {
         x: this.lockX,
         y: this.lockY,
-        duration: 0.3,
+        duration: 0.01,
         ease: "power2.out",
       });
     }
 
     draw() {
       if (!idle.current || this.index <= sineDots) {
-        gsap.to(this.element, { x: this.x, y: this.y, duration: 0.1 });
+        gsap.to(this.element, { x: this.x, y: this.y, duration: 0.01 });
       } else {
         this.angleX += this.anglespeed;
         this.angleY += this.anglespeed;
         this.y = this.lockY + Math.sin(this.angleY) * this.range;
         this.x = this.lockX + Math.sin(this.angleX) * this.range;
-        gsap.to(this.element, { x: this.x, y: this.y, duration: 0.1 });
+        gsap.to(this.element, { x: this.x, y: this.y, duration: 0.01 });
       }
     }
   }

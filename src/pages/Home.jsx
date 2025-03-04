@@ -53,13 +53,13 @@ const Home = () => {
   };
   useEffect(() => {
     const ellipse = ellipseRef.current.querySelector("ellipse");
-    
+
     const length = ellipse.getTotalLength();
     gsap.set(ellipse, {
       strokeDasharray: length,
-      strokeDashoffset: length, 
+      strokeDashoffset: length,
     });
-    
+
     gsap.to(ellipse, {
       strokeDashoffset: 0,
       duration: 4,
@@ -135,7 +135,7 @@ const Home = () => {
             translate: "none",
             rotate: "none",
             scale: "none",
-            maxWidth:"60vw"
+            maxWidth: "60vw",
           }}
         >
           <ellipse
@@ -167,25 +167,36 @@ const Home = () => {
           Taking Discord to the Next Level!
         </p>
         <div className="hero-buttons">
-          <div className="button" onClick={() => navigate("/download")}>
-            <img src="/icons/download.svg" alt="download" />
-            <span>Download</span>
+          <div
+            className="button c-pointer"
+            onClick={() => navigate("/download")}
+          >
+            <img
+              className="c-pointer"
+              src="/icons/download.svg"
+              alt="download"
+            />
+            <span className="c-pointer">Download</span>
           </div>
           <a
             href="https://discord.gg/5backnRhY9"
-            className="button"
+            className="button c-pointer"
             target="_blank"
           >
-            <img src="/icons/community.svg" alt="community" />
-            <span>Join Community</span>
+            <img
+              className="c-pointer"
+              src="/icons/community.svg"
+              alt="community"
+            />
+            <span className="c-pointer">Join Community</span>
           </a>
           <a
             href="https://github.com/MutanPlex/Plexcord"
-            className="button"
+            className="button c-pointer"
             target="_blank"
           >
-            <img src="/icons/github.svg" alt="github" />
-            <span>View Github</span>
+            <img className="c-pointer" src="/icons/github.svg" alt="github" />
+            <span className="c-pointer">View Github</span>
           </a>
         </div>
       </div>

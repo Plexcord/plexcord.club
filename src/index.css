@@ -66,21 +66,37 @@
   src: url("./assets/fonts/playwrite-it-moderna-400.woff2") format('woff2');
 }
 
+@font-face {
+  src: url("./assets/fonts/bueno.woff2") format("woff2 supports variations"), url("./assets/fonts/bueno-vf.woff2") format("woff2-variations");
+  font-weight: 700;
+  font-family: Bueno-VF;
+  font-synthesis: none;
+  font-display: swap;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, Helvetica, Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Playwrite IT Moderna", cursive;
-  font-weight: 600;
   font-size: 18px;
 
   --primary-color: #6e1beb;
-  --secondary-color: #eb1b1b;
-  
+  --primary-color-bg-half-transparent: #8b40fd;
+  --primary-color-bg-transparent: #6e1beb11;
+  --secondary-color: #a26cf5;
+  --secondary-color-bg-half-transparent: #a26cf588;
+  --secondary-color-bg-transparent: #a26cf51c;
+
+  --warning-color: #f73131;
+  --warning-color-transparent: #f7313111;
+
+  --info-primary: #eba11b94;
+  --info-primary-transparent: #eba11b21;
+
   --primary-hover: #777df7;
-  --secondary-hover: #f86c6c;
+  --secondary-hover: #b58bf3;
 }
 
 * {
@@ -88,7 +104,8 @@
   padding: 0;
   cursor: none;
 }
-html{
+
+html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -119,7 +136,7 @@ header ul li {
 }
 
 .href {
-  color: var(--primary-color);
+  color: #ffffff;
   text-decoration: inherit;
   position: relative;
   display: inline-block;
@@ -159,33 +176,31 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--primary-color);
+  color: #fff;
+  -webkit-text-stroke-width: thin;
   transition: border-color 0.25s;
+  transition: .3s;
 }
 
 button:hover {
-  border-color: #646cff;
+  background-color: var(--primary-hover);
 }
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
 }
 
-@font-face {
-  src: url("./assets/fonts/bueno.woff2") format("woff2 supports variations"), url("./assets/fonts/bueno-vf.woff2") format("woff2-variations");
-  font-weight: 700;
-  font-family: Bueno-VF;
-  font-synthesis: none;
-  font-display: swap;
-}
 .logo {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em var(--primary-color));
 }
+
 .hero-container {
   width: 100%;
   height: 80vh;
@@ -199,9 +214,10 @@ button:focus-visible {
 }
 
 ::selection {
-  background-color: #eb3f3f;
+  background-color: #a26cf5;
   color: white;
 }
+
 .Cursor {
   pointer-events: none;
   position: fixed;
@@ -214,16 +230,36 @@ button:focus-visible {
   z-index: 1000;
   filter: url("#goo");
 }
+
 .Cursor span {
-    position: absolute;
-    display: block;
-    width: 26px;
-    height: 26px;
-    border-radius: 20px;
-    background-color: white;
-    transform-origin: center center;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 20px;
+  background-color: white;
+  transform-origin: center center;
+  transform: translate(-50%, -50%);
+}
+
+.c-pointer {
+  cursor: none;
+}
+
+@media screen and (max-width: 1024px) {
+  * {
+    cursor: default;
   }
+
+  .Cursor {
+    display: none;
+  }
+
+  .c-pointer {
+    cursor: pointer;
+  }
+}
+
 .hero-container .hero h1 {
   font-size: 10em;
   font-weight: 600;
@@ -253,7 +289,7 @@ button:focus-visible {
 .hero-buttons .button {
   display: flex;
   align-items: center;
-  
+
 }
 
 .hero-buttons .button img {
@@ -280,6 +316,138 @@ button:focus-visible {
   box-shadow: 0 0 10px var(--primary-color);
 }
 
+/* DOWNLOAD PAGE */
+
+/* DOWNLOAD PAGE */
+.download-tabs {
+  display: grid;
+  margin: 1em 0;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.download-tabs button {
+  margin: 0 5px;
+  border-radius: 30px;
+}
+
+.download-tabs button[aria-selected="true"] {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  filter: drop-shadow(0 0 16px #000000);
+}
+
+.download-tabs svg {
+  width: 75px;
+  height: 75px;
+}
+
+.download-tabs button[aria-selected="false"] svg {
+  fill: var(--primary-color);
+  transition: .3s;
+}
+
+.download-tabs button[aria-selected="false"]:hover svg {
+  fill: #222222;
+}
+
+.download-tabs button[aria-selected="true"] svg {
+  fill: #222222;
+}
+
+.download-tab-content {
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color-bg-transparent);
+  border-radius: 5px;
+  padding: 30px;
+  margin: 5px;
+}
+
+.download-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.download-buttons .button {
+  background-color: var(--primary-color-bg-half-transparent);
+  border-radius: 10px;
+}
+
+.download-buttons .button:hover {
+  background-color: var(--primary-color);
+}
+
+.download-tabs button {
+  background-color: var(--primary-color-bg-transparent);
+  border: 1px solid var(--primary-color);
+}
+
+.download-tabs button:hover {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.download-buttons .selected {
+  background-color: var(--secondary-color-bg-half-transparent);
+}
+
+.download-tab-content code {
+  background-color: var(--primary-color-bg-half-transparent);
+  border-radius: 5px;
+  margin: 5px;
+  padding: 0 5px;
+  font-family: system-ui, Helvetica, Arial, sans-serif;
+}
+
+.download-important {
+  border: 1px solid var(--secondary-color);
+  background-color: var(--secondary-color-bg-transparent);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.download-tab-content div {
+  outline: none;
+}
+
+.download-info {
+  border: 1px solid var(--info-primary);
+  background-color: var(--info-primary-transparent);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.browser-icons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: .5em;
+  gap: 5px;
+}
+
+.browser-icons img {
+  width: 30px;
+  height: 30px;
+}
+
+.info-link-hover {
+  transition: .3s;
+}
+
+.info-link-hover:hover {
+  color: var(--primary-color-bg-half-transparent) !important;
+}
+
+.hover-download-img-btn {
+  transition: .3s;
+}
+
+.hover-download-img-btn:hover {
+  filter: drop-shadow(0 0 16px var(--primary-color));
+}
+
 @keyframes light {
   0% {
     filter: drop-shadow(0 0 10px var(--primary-color));
@@ -303,4 +471,21 @@ button:focus-visible {
     font-size: 6em;
   }
 
+}
+
+@media screen and (max-width: 573px) {
+  .download-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .download-buttons {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .download-buttons .button {
+    padding: 10px;
+  }
 }
