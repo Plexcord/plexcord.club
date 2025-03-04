@@ -12,10 +12,15 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/download" element={ <Download /> } />
-        <Route path="/plugins" element={ <Plugins /> } />
-        <Route path="/faq" element={ <Faq /> } />
-        <Route path="*" element={ <Custom404 /> } />
+        <Route path="/download" element={<Download />} />
+        <Route path="/plugins" element={<Plugins />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/discord" element={() => {
+            window.location.href = "https://discord.gg/5backnRhY9";
+            return null;
+          }}
+        />
+        <Route path="*" element={<Custom404 />} />
       </Routes>
     </Router>
   );

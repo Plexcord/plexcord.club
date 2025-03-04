@@ -97,5 +97,5 @@
 @keyframes noise-3 {
   0%,3%,5%,42%,44%,100% {opacity: 1; transform: scaleY(1);}
   4.3% {opacity: 1; transform: scaleY(4);}
-  43% {opacity: 1; transform: scaleX(10) rotate(60deg);}
+  43% {opacity: 1; transform: scaleX(1.5) rotate(3deg);}
 }
