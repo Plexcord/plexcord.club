@@ -6,6 +6,8 @@ import Download from "./pages/Download";
 import Plugins from "./pages/Plugins";
 import Faq from "./pages/Faq";
 import Custom404 from "./errors/Custom404";
+import Footer from "./components/Footer";
+import Source from "./pages/Source";
 
 function DiscordRedirect() {
   useEffect(() => {
@@ -22,10 +24,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/download" element={<Download />} />
         <Route path="/plugins" element={<Plugins />} />
+        <Route path="/plugins/:plugin" element={<Plugins />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/discord" element={<DiscordRedirect />} />
+        <Route path="/source" element={<Source />} />
         <Route path="*" element={<Custom404 />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
