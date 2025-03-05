@@ -95,6 +95,7 @@ const Home = () => {
       className="hero-container"
       style={{
         perspective: "1000px",
+        flex: "1",
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}

@@ -98,6 +98,11 @@
   --primary-hover: #777df7;
   --secondary-hover: #b58bf3;
 }
+#root{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 * {
   margin: 0;
@@ -446,6 +451,64 @@ button:focus-visible {
 
 .hover-download-img-btn:hover {
   filter: drop-shadow(0 0 16px var(--primary-color));
+}
+
+/* PLUGINS PAGE */
+
+.plugin-list-ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.plugin-list-li {
+  background: var(--primary-color-bg-transparent);
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.by {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.plugin-readme p {
+  margin: 10px 0;
+}
+
+.plugin-readme {
+  margin-top: 20px;
+  background: var(--primary-color-bg-transparent);
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  background-color: var(--primary-color-bg-transparent);
+  border-top: 1px solid var(--primary-color);
+  margin-top: 30px;
+}
+
+.footer-icon {
+  width: 30px;
+  height: 30px;
+  transition: .3s;
+  margin: 0 5px;
+}
+
+.footer-icon:hover {
+  stroke: var(--primary-color);
+  fill: var(--primary-color);
 }
 
 @keyframes light {

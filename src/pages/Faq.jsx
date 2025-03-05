@@ -1,6 +1,6 @@
 const Faq = () => {
   return (
-    <div>
+    <div style={{ width: "100%", maxWidth: "1200px",flex: "1", margin: "0 auto" }}>
       <h1>Faq</h1>
     </div>
   );

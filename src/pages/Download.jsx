@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Clipboard, Check } from "lucide-react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 const Download = () => {
   const [copied, setCopied] = useState(false);
@@ -18,7 +17,7 @@ const Download = () => {
 
   return (
     <>
-      <div style={{ width: "100%", maxWidth: "1200px", margin: "0 auto" }}>
+      <div style={{ width: "100%", maxWidth: "1200px",flex: "1", margin: "0 auto" }}>
         <h1>Download Plexcord</h1>
         <TabGroup>
           <TabList className="download-tabs">
@@ -193,15 +192,47 @@ const Download = () => {
                     className="c-pointer"
                     onClick={copyToClipboard}
                     style={{
-                      display: "block",
                       width: "fit-content",
                       right: "0",
                       textAlign: "right",
                       position: "relative",
                       margin: "0 0 0 auto",
+                      display: "flex",
+                      alignItems: "center",
                     }}
                   >
-                    {copied ? <Check className="c-pointer" size={16} /> : <Clipboard className="c-pointer" size={16} />}
+                    {copied ? (
+                      <svg
+                        baseProfile="tiny"
+                        height="24px"
+                        id="Layer_1"
+                        version="1.2"
+                        viewBox="0 0 24 24"
+                        width="24px"
+                        xmlSpace="preserve"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="#fff"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                        style={{ width: "20px", height: "20px" }}
+                      >
+                        <path d="M16.972,6.251c-0.967-0.538-2.185-0.188-2.72,0.777l-3.713,6.682l-2.125-2.125c-0.781-0.781-2.047-0.781-2.828,0  c-0.781,0.781-0.781,2.047,0,2.828l4,4C9.964,18.792,10.474,19,11,19c0.092,0,0.185-0.006,0.277-0.02  c0.621-0.087,1.166-0.46,1.471-1.009l5-9C18.285,8.005,17.937,6.788,16.972,6.251z" />
+                      </svg>
+                    ) : (
+                      <svg
+                        version="1.1"
+                        viewBox="0 0 24 24"
+                        xmlSpace="preserve"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="#fff"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                        style={{ width: "20px", height: "20px" }}
+                      >
+                        <g id="grid_system" />
+                        <g id="_icons">
+                          <path d="M15.8,3.1C15.4,2.4,14.8,2,14,2h-4C9.2,2,8.6,2.4,8.2,3.1C6.4,3.4,5,5.1,5,7v11c0,2.2,1.8,4,4,4h6c2.2,0,4-1.8,4-4V7   C19,5.1,17.6,3.4,15.8,3.1z M14,4L14,4v1h-4V4L14,4z M17,18c0,1.1-0.9,2-2,2H9c-1.1,0-2-0.9-2-2V7c0-0.7,0.4-1.4,1-1.7   c0,0,0,0.1,0,0.1c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0.1,0.2c0,0,0,0.1,0.1,0.1C8.2,5.9,8.3,6,8.3,6c0,0,0.1,0.1,0.1,0.1   c0,0.1,0.1,0.1,0.1,0.2c0,0,0.1,0.1,0.1,0.1c0.1,0.1,0.1,0.1,0.2,0.1c0,0,0.1,0.1,0.1,0.1c0.1,0,0.1,0.1,0.2,0.1c0,0,0.1,0,0.1,0.1   c0.1,0,0.2,0.1,0.2,0.1c0,0,0.1,0,0.1,0C9.7,7,9.9,7,10,7h4c0.1,0,0.3,0,0.4,0c0,0,0.1,0,0.1,0c0.1,0,0.2,0,0.2-0.1   c0,0,0.1,0,0.1-0.1c0.1,0,0.1-0.1,0.2-0.1c0,0,0.1-0.1,0.1-0.1c0.1,0,0.1-0.1,0.2-0.1c0,0,0.1-0.1,0.1-0.1c0-0.1,0.1-0.1,0.1-0.2   c0,0,0.1-0.1,0.1-0.1c0-0.1,0.1-0.1,0.1-0.2c0,0,0-0.1,0.1-0.1c0-0.1,0-0.1,0.1-0.2c0-0.1,0-0.1,0-0.2c0,0,0-0.1,0-0.1   c0.6,0.3,1,1,1,1.7V18z" />
+                        </g>
+                      </svg>
+                    )}
                     Copy
                   </div>
                   <code
