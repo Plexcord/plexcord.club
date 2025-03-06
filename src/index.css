@@ -98,7 +98,8 @@
   --primary-hover: #777df7;
   --secondary-hover: #b58bf3;
 }
-#root{
+
+#root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -249,20 +250,6 @@ button:focus-visible {
 
 .c-pointer {
   cursor: none;
-}
-
-@media screen and (max-width: 1024px) {
-  * {
-    cursor: default;
-  }
-
-  .Cursor {
-    display: none;
-  }
-
-  .c-pointer {
-    cursor: pointer;
-  }
 }
 
 .hero-container .hero h1 {
@@ -488,6 +475,39 @@ button:focus-visible {
   padding: 15px;
 }
 
+/* FAQ */
+.rs-panel-group-bordered {
+  border: 1px solid var(--primary-color) !important;
+  border-radius: 10px;
+  background: var(--primary-color-bg-transparent);
+  padding: 10px;
+  margin: 20px 0;
+}
+
+.rs-panel-btn {
+  background: transparent !important;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.rs-panel-btn:hover,
+.rs-panel-btn:focus,
+.rs-panel-btn:active {
+  color: white !important;
+}
+
+.rs-panel-btn:hover {
+  background: var(--primary-color-bg-half-transparent) !important;
+}
+
+.rs-panel-collapsible>.rs-panel-header {
+  cursor: none !important;
+}
+.rs-panel-group > .rs-panel + .rs-panel::before{
+  border-top: 1px solid var(--primary-color)!important;
+}
+
 /* FOOTER */
 footer {
   display: flex;
@@ -523,6 +543,26 @@ footer {
   100% {
     filter: drop-shadow(0 0 10px var(--primary-color));
   }
+}
+
+
+@media screen and (max-width: 1024px) {
+  * {
+    cursor: default;
+  }
+
+  .Cursor {
+    display: none;
+  }
+
+  .c-pointer {
+    cursor: pointer;
+  }
+
+  .rs-panel-collapsible>.rs-panel-header {
+    cursor: none !important;
+  }
+
 }
 
 @media screen and (max-width: 768px) {
