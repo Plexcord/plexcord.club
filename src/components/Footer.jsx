@@ -7,7 +7,7 @@ const Footer = () => {
         <span
           className="c-pointer href"
           onClick={() => {
-                navigate("/source");
+            navigate("/source");
           }}
         >
           Source Code
