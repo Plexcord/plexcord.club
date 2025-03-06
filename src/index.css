@@ -504,8 +504,30 @@ button:focus-visible {
 .rs-panel-collapsible>.rs-panel-header {
   cursor: none !important;
 }
-.rs-panel-group > .rs-panel + .rs-panel::before{
-  border-top: 1px solid var(--primary-color)!important;
+
+.rs-panel-group>.rs-panel+.rs-panel::before {
+  border-top: 1px solid var(--primary-color) !important;
+}
+
+.content-container {
+  width: calc(100% - 40px) !important;
+  margin: 0 20px !important;
+  align-self: center;
+}
+
+/* SOURCE */
+.card-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: stretch;
+  margin-top: 2rem;
+}
+
+.repo-card:hover {
+  box-shadow: 0 0 10px var(--primary-color);
+  border-radius: 10px;
+  transition: .3s;
 }
 
 /* FOOTER */
@@ -579,6 +601,10 @@ footer {
 @media screen and (max-width: 573px) {
   .download-tabs {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .plugin-list-ul {
+    grid-template-columns: 1fr;
   }
 
   .download-buttons {

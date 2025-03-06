@@ -17,7 +17,7 @@ const Download = () => {
 
   return (
     <>
-      <div style={{ width: "100%", maxWidth: "1200px",flex: "1", margin: "0 auto" }}>
+      <div className="content-container" style={{ width: "100%", maxWidth: "1200px",flex: "1", margin: "0 auto" }}>
         <h1>Download Plexcord</h1>
         <TabGroup>
           <TabList className="download-tabs">

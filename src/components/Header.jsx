@@ -18,7 +18,7 @@ const Header = () => {
             alt="logo"
           />
         </div>
-        <ul>
+        <ul style={{userSelect: "none"}}>
           <li>
             <div className="href" onClick={() => navigate("/download")}>
               Download

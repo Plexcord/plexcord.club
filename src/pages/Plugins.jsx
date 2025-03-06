@@ -33,7 +33,7 @@ const Plugins = () => {
 
   return (
     <>
-      <div style={{ width: "100%", maxWidth: "1200px",flex: "1", margin: "0 auto" }}>
+      <div className="content-container" style={{ width: "100%", maxWidth: "1200px",flex: "1", margin: "0 auto" }}>
         {!currentPlugin && (
           <div>
             <h1>Plugins</h1>

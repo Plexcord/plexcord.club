@@ -37,7 +37,7 @@ const CodeBlock = () => {
 const Faq = () => {
   const navigate = useNavigate();
   return (
-    <div
+    <div className="content-container"
       style={{ width: "100%", maxWidth: "1200px", flex: "1", margin: "0 auto" }}
     >
       <h1>Faq</h1>

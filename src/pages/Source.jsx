@@ -33,32 +33,34 @@ const RepoCard = ({ data }) => {
   const customDescription = customDescriptions[data.name] || data.description;
 
   return (
-    <a
-      href={data.html_url}
-      target="_blank"
+    <div
+      onClick={() => window.open(data.html_url, "_blank")}
       rel="noopener noreferrer"
+      className="repo-card c-pointer"
       style={{
         display: "flex",
         flexDirection: "column",
         height: "100%",
         textDecoration: "none",
         color: "inherit",
+        transition: ".3s"
       }}
     >
       <div
+        className="c-pointer"
         style={{
           border: "1px solid var(--primary-color)",
           background: "var(--primary-color-bg-transparent)",
           padding: "1rem",
           borderRadius: "8px",
           transition: "box-shadow 0.3s",
-          cursor: "pointer",
           display: "flex",
           flexDirection: "column",
           flexGrow: 1,
         }}
       >
         <div
+          className="c-pointer"
           style={{
             display: "flex",
             alignItems: "center",
@@ -66,6 +68,7 @@ const RepoCard = ({ data }) => {
           }}
         >
           <img
+            className="c-pointer"
             src={data.owner.avatar_url}
             alt={data.owner.login}
             style={{
@@ -78,13 +81,23 @@ const RepoCard = ({ data }) => {
           <span style={{ fontSize: "14px" }}>{data.owner.login}</span>
         </div>
 
-        <p style={{ fontWeight: "600" }}>{data.name}</p>
-        <p style={{margin:"10px 0"}}>{customDescription}</p>
-        <div style={{ display: "flex", marginTop: "auto",gap: "20px" }}>
-          <p style={{ display: "flex", alignItems: "center" }}>
+        <p className="c-pointer" style={{ fontWeight: "600" }}>
+          {data.name}
+        </p>
+        <p className="c-pointer" style={{ margin: "10px 0" }}>
+          {customDescription}
+        </p>
+        <div
+          className="c-pointer"
+          style={{ display: "flex", marginTop: "auto", gap: "20px" }}
+        >
+          <p
+            className="c-pointer"
+            style={{ display: "flex", alignItems: "center" }}
+          >
             {data.language ? (
-              <span style={{ display: "flex", alignItems: "center" }}>
-                <span
+              <span className="c-pointer" style={{ display: "flex", alignItems: "center" }}>
+                <span className="c-pointer"
                   style={{
                     display: "inline-block",
                     width: "12px",
@@ -101,16 +114,16 @@ const RepoCard = ({ data }) => {
             )}
           </p>
 
-          <p
+          <p className="c-pointer"
             style={{ marginTop: "auto", display: "flex", alignItems: "center" }}
           >
-            <span style={{ display: "flex", alignItems: "center" }}>
-              <span
+            <span className="c-pointer" style={{ display: "flex", alignItems: "center" }}>
+              <span className="c-pointer"
                 role="img"
                 aria-label="star"
                 style={{ marginRight: "0.25rem" }}
               >
-                <svg
+                <svg className="c-pointer"
                   fill="var(--primary-color)"
                   version="1.1"
                   id="Capa_1"
@@ -141,7 +154,7 @@ const RepoCard = ({ data }) => {
           </p>
         </div>
       </div>
-    </a>
+    </div>
   );
 };
 
@@ -173,6 +186,7 @@ const Source = () => {
 
   return (
     <div
+      className="content-container"
       style={{
         width: "100%",
         maxWidth: "1200px",
@@ -182,15 +196,7 @@ const Source = () => {
     >
       <h1>Source</h1>
       <p>Plexcord&apos;s git repository</p>
-      <div
-        style={{
-          display: "grid",
-          gap: "1rem",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-          alignItems: "stretch",
-          marginTop: "2rem",
-        }}
-      >
+      <div className="card-container">
         {reposData.map((repoData, index) => (
           <RepoCard key={index} data={repoData} />
         ))}

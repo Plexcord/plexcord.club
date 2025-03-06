@@ -92,7 +92,7 @@ const Home = () => {
   return (
     <div
       ref={heroRef}
-      className="hero-container"
+      className="hero-container content-container"
       style={{
         perspective: "1000px",
         flex: "1",
