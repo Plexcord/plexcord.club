@@ -566,7 +566,11 @@ footer {
     filter: drop-shadow(0 0 10px var(--primary-color));
   }
 }
-
+@media screen and (max-width: 1100px){
+  .hero-container .hero h1 {
+    font-size: 8em;
+  }
+}
 
 @media screen and (max-width: 1024px) {
   * {
@@ -586,16 +590,30 @@ footer {
   }
 
 }
+@media screen and (max-width: 860px){
+  .hero-container .hero h1 {
+    font-size: 7em;
+  }
+  .hero-container .hero svg {
+    top: -34%!important;
+  }
+}
 
 @media screen and (max-width: 768px) {
   :root {
     font-size: 14px;
   }
-
+  .hero-buttons {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 600px){
   .hero-container .hero h1 {
     font-size: 6em;
   }
-
+  .hero-container .hero svg {
+    top: -35%!important;
+  }
 }
 
 @media screen and (max-width: 573px) {
@@ -616,5 +634,40 @@ footer {
 
   .download-buttons .button {
     padding: 10px;
+  }
+  .hero-container .hero svg {
+    top: -35%!important;
+  }
+}
+@media screen and (max-width: 500px){
+  .hero-container .hero h1 {
+    font-size: 5em;
+  }
+  .hero-container .hero svg {
+    top: -35%!important;
+  }
+}
+@media screen and (max-width: 430px){
+  .hero-container .hero h1 {
+    font-size: 4em;
+  }
+  .hero-container .hero svg {
+    top: -39%!important;
+  }
+}
+@media screen and (max-width: 350px){
+  .hero-container .hero h1 {
+    font-size: 3.4em;
+  }
+  .hero-container .hero svg {
+    top: -40%!important;
+  }
+}
+@media screen and (max-width: 280px){
+  .hero-container .hero h1 {
+    font-size: 3em;
+  }
+  .hero-container .hero svg {
+    top: -41%!important;
   }
 }
