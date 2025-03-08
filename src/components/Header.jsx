@@ -45,14 +45,9 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a
-              className="href"
-              href="https://api.plexcord.club"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <div className="href" onClick={() => navigate("/cloud")}>
               Cloud
-            </a>
+            </div>
           </li>
         </ul>
       </header>

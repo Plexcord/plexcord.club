@@ -8,6 +8,7 @@ import Faq from "./pages/Faq";
 import Custom404 from "./errors/Custom404";
 import Footer from "./components/Footer";
 import Source from "./pages/Source";
+import Cloud from "./pages/Cloud";
 
 function DiscordRedirect() {
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/discord" element={<DiscordRedirect />} />
         <Route path="/source" element={<Source />} />
+        <Route path="/cloud" element={<Cloud />} />
         <Route path="*" element={<Custom404 />} />
       </Routes>
       <Footer />
