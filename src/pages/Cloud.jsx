@@ -11,9 +11,9 @@ const Cloud = () => {
         }}
       >
         <h1>Cloud</h1>
-        <p>Now in PlexCord</p>
+        <p>Now in Plexcord</p>
         <p style={{ margin: "1rem 0" }}>
-          PlexCord just got a brand new feature! With cloud integration, you can
+          Plexcord just got a brand new feature! With cloud integration, you can
           enjoy some amazing features. It&apos;s completely optional and
           respects your privacy!
         </p>
@@ -32,7 +32,7 @@ const Cloud = () => {
         <h1>Getting Started</h1>
         <p style={{ margin: "1rem 0" }}>
           To start using the cloud integration, go to{" "}
-          <strong>PlexCord settings</strong> and enable the{" "}
+          <strong>Plexcord settings</strong> and enable the{" "}
           <strong>&quot;Enable Cloud Integration&quot;</strong> option. After
           authorization, you&apos;re all set! You can now toggle specific
           features on or off.
@@ -52,7 +52,7 @@ const Cloud = () => {
           </li>
         </ul>
 
-        <p>Everything is easier with PlexCord!</p>
+        <p>Everything is easier with Plexcord!</p>
       </div>
     </>
   );
