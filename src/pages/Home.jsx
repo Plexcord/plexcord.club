@@ -90,6 +90,9 @@ const Home = () => {
     });
   };
   return (
+    <>
+    <title>Home | Plexcord</title>
+    <meta name="keywords" content="plexcord, plexcord indir, plexcord download, plexcord github" />
     <div
       ref={heroRef}
       className="hero-container content-container"
@@ -202,6 +205,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -37,6 +37,9 @@ const CodeBlock = () => {
 const Faq = () => {
   const navigate = useNavigate();
   return (
+    <>
+    <title>Faq | Plexcord</title>
+    <meta name="keywords" content="plexcord faq, plexcord sss" />
     <div className="content-container"
       style={{ width: "100%", maxWidth: "1200px", flex: "1", margin: "0 auto" }}
     >
@@ -351,6 +354,7 @@ const Faq = () => {
         </Panel>
       </Accordion>
     </div>
+    </>
   );
 };
 

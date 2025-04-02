@@ -17,6 +17,8 @@ const Download = () => {
 
   return (
     <>
+      <title>Download | Plexcord</title>
+      <meta name="keywords" content="plexcord download, plexcord download github" />
       <div className="content-container" style={{ width: "100%", maxWidth: "1200px",flex: "1", margin: "0 auto" }}>
         <h1>Download Plexcord</h1>
         <TabGroup>

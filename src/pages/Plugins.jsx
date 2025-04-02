@@ -33,6 +33,8 @@ const Plugins = () => {
 
   return (
     <>
+      <title>Plugins | Plexcord</title>
+      <meta name="keywords" content="plexcord plugins, plexcord plugin, discord plugin" />
       <div className="content-container" style={{ width: "100%", maxWidth: "1200px",flex: "1", margin: "0 auto" }}>
         {!currentPlugin && (
           <div>

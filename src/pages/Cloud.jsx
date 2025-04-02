@@ -1,6 +1,8 @@
 const Cloud = () => {
   return (
     <>
+      <title>Cloud | Plexcord</title>
+      <meta name="keywords" content="plexcord cloud, plexcord cloud github" />
       <div
         className="content-container"
         style={{
@@ -41,12 +43,22 @@ const Cloud = () => {
         <h3>Links</h3>
         <ul style={{ listStyleType: "disc", margin: "1rem 2rem" }}>
           <li style={{ marginBottom: "1rem" }}>
-            <div className="href" onClick={() => window.open("https://github.com/Plexcord/Backend", "_blank")}>
+            <div
+              className="href"
+              onClick={() =>
+                window.open("https://github.com/Plexcord/Backend", "_blank")
+              }
+            >
               Source Code
             </div>
           </li>
           <li>
-            <div className="href" onClick={() => window.open("https://api.plexcord.club/privacy", "_blank")}>
+            <div
+              className="href"
+              onClick={() =>
+                window.open("https://api.plexcord.club/privacy", "_blank")
+              }
+            >
               Privacy Policy
             </div>
           </li>

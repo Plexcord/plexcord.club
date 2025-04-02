@@ -33,6 +33,9 @@ const RepoCard = ({ data }) => {
   const customDescription = customDescriptions[data.name] || data.description;
 
   return (
+    <>
+    <title>Source | Plexcord</title>
+    <meta name="keywords" content="plexcord source, plexcord github, discord source" />
     <div
       onClick={() => window.open(data.html_url, "_blank")}
       rel="noopener noreferrer"
@@ -155,6 +158,7 @@ const RepoCard = ({ data }) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
