@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { marked } from "marked";
+import { Helmet } from "react-helmet-async";
+
 const Plugins = () => {
   const [plugins, setPlugins] = useState([]);
   const navigate = useNavigate();
@@ -33,9 +35,26 @@ const Plugins = () => {
 
   return (
     <>
-      <title>Plugins | Plexcord</title>
-      <meta name="keywords" content="plexcord plugins, plexcord plugin, discord plugin" />
-      <div className="content-container" style={{ width: "100%", maxWidth: "1200px",flex: "1", margin: "0 auto" }}>
+      <Helmet>
+        <title>Plugins | Plexcord</title>
+        <meta
+          name="keywords"
+          content="plexcord plugins, plexcord plugin, discord plugin"
+        />
+        <meta
+          name="description"
+          content="Plexcord plugins, discord plugins, plexcord plugin list"
+        />
+      </Helmet>
+      <div
+        className="content-container"
+        style={{
+          width: "100%",
+          maxWidth: "1200px",
+          flex: "1",
+          margin: "0 auto",
+        }}
+      >
         {!currentPlugin && (
           <div>
             <h1>Plugins</h1>

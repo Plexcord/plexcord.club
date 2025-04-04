@@ -9,6 +9,7 @@ import Custom404 from "./errors/Custom404";
 import Footer from "./components/Footer";
 import Source from "./pages/Source";
 import Cloud from "./pages/Cloud";
+import { HelmetProvider } from 'react-helmet-async';
 
 function DiscordRedirect() {
   useEffect(() => {
@@ -19,6 +20,7 @@ function DiscordRedirect() {
 }
 function App() {
   return (
+    <HelmetProvider>
     <Router>
       <Header />
       <Routes>
@@ -34,6 +36,7 @@ function App() {
       </Routes>
       <Footer />
     </Router>
+  </HelmetProvider>
   );
 }
 
