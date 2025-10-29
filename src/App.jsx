@@ -13,7 +13,7 @@ import { HelmetProvider } from 'react-helmet-async';
 
 function DiscordRedirect() {
   useEffect(() => {
-    window.location.href = "https://discord.gg/5backnRhY9";
+    window.location.href = "https://discord.gg/HQGYXm5XSh";
   }, []);
 
   return null;

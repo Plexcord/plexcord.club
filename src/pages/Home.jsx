@@ -187,7 +187,7 @@ const Home = () => {
             <span className="c-pointer">Download</span>
           </div>
           <a
-            href="https://discord.gg/5backnRhY9"
+            href="https://discord.gg/HQGYXm5XSh"
             className="button c-pointer"
             target="_blank"
           >

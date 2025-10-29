@@ -23,7 +23,7 @@ const Footer = () => {
           className="footer-icon c-pointer"
           height="50px"
           onClick={() => {
-            window.open("https://discord.gg/5backnRhY9", "_blank");
+            window.open("https://discord.gg/HQGYXm5XSh", "_blank");
           }}
           fill="#ffffff"
         >
