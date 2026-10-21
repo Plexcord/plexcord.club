@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { marked } from "marked";
-import { Helmet } from "react-helmet-async";
 
 const Plugins = () => {
   const [plugins, setPlugins] = useState([]);
@@ -35,7 +34,6 @@ const Plugins = () => {
 
   return (
     <>
-      <Helmet>
         <title>Plugins | Plexcord</title>
         <meta
           name="keywords"
@@ -45,7 +43,6 @@ const Plugins = () => {
           name="description"
           content="Plexcord plugins, discord plugins, plexcord plugin list"
         />
-      </Helmet>
       <div
         className="content-container"
         style={{

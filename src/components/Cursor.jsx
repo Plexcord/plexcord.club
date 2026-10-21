@@ -55,8 +55,9 @@ const Cursor = () => {
   useEffect(() => {
     if (window.innerWidth <= 1024) return;
     
-    if (cursorRef.current) {
-      cursorRef.current.innerHTML = "";
+    const cursorEl = cursorRef.current;
+    if (cursorEl) {
+      cursorEl.innerHTML = "";
     }
 
     const onMouseMove = (event) => {
@@ -115,10 +116,11 @@ const Cursor = () => {
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
       clearTimeout(timeoutID.current);
-      if (cursorRef.current) {
-        cursorRef.current.innerHTML = "";
+      if (cursorEl) {
+        cursorEl.innerHTML = "";
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return <div id="cursor" className="Cursor" ref={cursorRef}></div>;

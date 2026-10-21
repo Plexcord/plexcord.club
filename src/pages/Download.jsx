@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 const Download = () => {
@@ -18,7 +17,6 @@ const Download = () => {
 
   return (
     <>
-      <Helmet>
         <title>Download | Plexcord</title>
         <meta
           name="keywords"
@@ -28,7 +26,6 @@ const Download = () => {
           name="description"
           content="Plexcord download page, download Plexcord for Discord."
         />
-      </Helmet>
       <div
         className="content-container"
         style={{

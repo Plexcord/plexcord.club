@@ -4,7 +4,6 @@ import "rsuite/Accordion/styles/index.css";
 import "rsuite/Panel/styles/index.css";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { Helmet } from "react-helmet-async";
 
 const CodeBlock = () => {
   const codeString = `(() => {
@@ -40,11 +39,9 @@ const Faq = () => {
   const navigate = useNavigate();
   return (
     <>
-      <Helmet>
         <title>Faq | Plexcord</title>
         <meta name="keywords" content="plexcord faq, plexcord sss" />
         <meta name="description" content="Plexcord FAQ" />
-      </Helmet>
       <div
         className="content-container"
         style={{

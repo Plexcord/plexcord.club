@@ -1,12 +1,9 @@
-import { Helmet } from "react-helmet-async";
 const Cloud = () => {
   return (
     <>
-      <Helmet>
         <title>Cloud | Plexcord</title>
         <meta name="keywords" content="plexcord cloud, plexcord cloud github" />
         <meta name="description" content="Plexcord cloud integration." />
-      </Helmet>
       <div
         className="content-container"
         style={{

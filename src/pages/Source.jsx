@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
 
 const repos = [
   { owner: "MutanPlex", repo: "Plexcord" },
@@ -35,7 +34,6 @@ const RepoCard = ({ data }) => {
 
   return (
     <>
-      <Helmet>
         <title>Source | Plexcord</title>
         <meta
           name="keywords"
@@ -45,7 +43,6 @@ const RepoCard = ({ data }) => {
           name="description"
           content="Plexcord's source code and repositories."
         />
-      </Helmet>
       <div
         onClick={() => window.open(data.html_url, "_blank")}
         rel="noopener noreferrer"

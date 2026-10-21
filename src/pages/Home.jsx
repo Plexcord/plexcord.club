@@ -1,6 +1,5 @@
 import { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from 'react-helmet-async';
 import gsap from "gsap";
 
 const Home = () => {
@@ -92,11 +91,9 @@ const Home = () => {
   };
   return (
     <>
-    <Helmet>
         <title>Home | Plexcord</title>
         <meta name="keywords" content="plexcord, plexcord indir, plexcord download, plexcord github" />
         <meta name="description" content="Plexcord Taking Discord to the Next Level!" />
-      </Helmet>
     <div
       ref={heroRef}
       className="hero-container content-container"
